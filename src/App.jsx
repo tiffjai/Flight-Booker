@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useState } from "react";
 const App = () => {
   const TODAY = formatDate(new Date());
   const [departureDate, setDepartureDate] = useState(TODAY);
@@ -12,24 +12,24 @@ const App = () => {
     const day = date.getDate().toString().padStart(2, "0");
     return `${year}-${month}-${day}`;
   }
-//form submission handler
-function submitForm(event) {
-  event.preventDefault();
-  if (flightOption === 'one-way') {
-    alert(`You have booked a one-way flight on ${departureDate}`);
-  } else {
-    alert(
-      `You have booked a return flight, departing on ${departureDate} and returning on ${returnDate}`
-    );
+  //form submission handler
+  function submitForm(event) {
+    event.preventDefault();
+    if (flightOption === "one-way") {
+      alert(`You have booked a one-way flight on ${departureDate}`);
+    } else {
+      alert(
+        `You have booked a return flight, departing on ${departureDate} and returning on ${returnDate}`
+      );
+    }
   }
-}
 
   return (
-    <div>
+    <div className="app">
       <form className="flight-booker" onSubmit={submitForm}>
         <select
           value={flightOption}
-          onChange={(event = setFlightOption(event.target.value))}
+          onChange={(event) => setFlightOption(event.target.value)}
         >
           <option value="one-way">One-way flight</option>
           <option value="return">Return flight</option>
