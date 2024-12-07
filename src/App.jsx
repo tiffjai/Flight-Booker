@@ -4,6 +4,15 @@ const App = () => {
   const TODAY = formatDate(new Date());
   const [departureDate, setDepartureDate] = useState(TODAY);
   const [flightOption, setFlightOption] = useState("one-way");
+
+  //handle date formating
+  function formatDate(date) {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+  
   return (
     <div>
       <form className="flight-booker">
