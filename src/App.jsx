@@ -1,10 +1,6 @@
 import React from "react";
 import { useState } from "react";
-const App = () => {
-  const TODAY = formatDate(new Date());
-  const [departureDate, setDepartureDate] = useState(TODAY);
-  const [flightOption, setFlightOption] = useState("one-way");
-  const [returnDate, setReturnDate] = useState(departureDate);
+
   //handle date formating
   function formatDate(date) {
     const year = date.getFullYear();
@@ -12,6 +8,12 @@ const App = () => {
     const day = date.getDate().toString().padStart(2, "0");
     return `${year}-${month}-${day}`;
   }
+const App = () => {
+  const TODAY = formatDate(new Date());
+  const [departureDate, setDepartureDate] = useState(TODAY);
+  const [flightOption, setFlightOption] = useState("one-way");
+  const [returnDate, setReturnDate] = useState(departureDate);
+
   //form submission handler
   function submitForm(event) {
     event.preventDefault();
