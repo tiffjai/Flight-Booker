@@ -26,7 +26,7 @@ function submitForm(event) {
 
   return (
     <div>
-      <form className="flight-booker">
+      <form className="flight-booker" onSubmit={submitForm}>
         <select
           value={flightOption}
           onChange={(event = setFlightOption(event.target.value))}
