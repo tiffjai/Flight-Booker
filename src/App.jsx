@@ -12,6 +12,17 @@ const App = () => {
     const day = date.getDate().toString().padStart(2, "0");
     return `${year}-${month}-${day}`;
   }
+//form submission handler
+function submitForm(event) {
+  event.preventDefault();
+  if (flightOption === 'one-way') {
+    alert(`You have booked a one-way flight on ${departureDate}`);
+  } else {
+    alert(
+      `You have booked a return flight, departing on ${departureDate} and returning on ${returnDate}`
+    );
+  }
+}
 
   return (
     <div>
