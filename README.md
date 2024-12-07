@@ -44,8 +44,8 @@ A simple and stylish React-based flight booking application. This project allows
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/flight-booker.git
-   cd flight-booker
+   git clone https://github.com/tiffjai/Flight-Booker
+   cd Flight-Booker
    ```
 
 2. **Install Dependencies**:
